@@ -12,7 +12,7 @@
     <meta name="apple-mobile-web-app-title" content="E-Luna Rent">
     <link rel="apple-touch-icon" href="https://kineticgreen.girnarsoft.com/assets/frontend/image/default-white-logo.svg">
 
-    <!-- Web App Manifest Placeholder (Generated via JS) -->
+    <!-- Web App Manifest Placeholder -->
     <link rel="manifest" id="pwa-manifest">
 
     <!-- Google Fonts -->
@@ -46,7 +46,7 @@
         body {
             background-color: var(--bg-dark);
             color: var(--text-white);
-            line-height: 1.5;
+            line-height: 1.4;
             overflow-x: hidden;
             background-image: 
                 radial-gradient(circle at 0% 0%, rgba(46, 204, 113, 0.08) 0%, transparent 40%),
@@ -54,23 +54,10 @@
             background-attachment: fixed;
         }
 
-        /* --- Animations --- */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes pulse-border {
-            0% { border-color: var(--border); }
-            50% { border-color: var(--primary-glow); }
-            100% { border-color: var(--border); }
-        }
-
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
         }
         .reveal.active {
             opacity: 1;
@@ -82,112 +69,104 @@
             position: fixed;
             width: 100%;
             top: 0;
-            padding: 24px 8%;
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
+            background: rgba(3, 7, 18, 0.6);
+            backdrop-filter: blur(10px);
         }
 
         nav.scrolled {
-            padding: 14px 8%;
-            background: rgba(3, 7, 18, 0.85);
-            backdrop-filter: blur(20px);
+            padding: 12px 8%;
+            background: rgba(3, 7, 18, 0.9);
             border-bottom: 1px solid var(--primary-glow);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .logo-container img {
-            height: 42px;
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+            height: 38px;
+            width: auto;
+            display: block;
         }
 
         .cta-nav {
             background: var(--primary);
             color: #000;
-            padding: 12px 28px;
-            border-radius: 14px;
+            padding: 10px 20px;
+            border-radius: 12px;
             font-weight: 800;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
             text-decoration: none;
             transition: 0.3s;
-            box-shadow: 0 5px 20px var(--primary-glow);
+            white-space: nowrap;
         }
 
         /* --- Hero Section --- */
         .hero {
-            padding: 200px 8% 100px;
+            padding: 120px 6% 40px;
             text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+            background: linear-gradient(to bottom, #fff 60%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-tagline {
             color: var(--primary);
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 6px;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
+            letter-spacing: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
             display: block;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 10vw, 6rem);
-            font-weight: 800;
-            line-height: 0.9;
-            letter-spacing: -3px;
-            margin-bottom: 20px;
-            background: linear-gradient(to bottom, #fff 60%, #475569 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .style-tagline {
             font-style: italic;
-            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            font-size: clamp(1rem, 4vw, 1.4rem);
             color: var(--text-slate);
-            margin-bottom: 30px;
-            font-weight: 300;
+            margin-bottom: 25px;
+            font-weight: 400;
         }
 
         .catchy-badge {
             display: inline-block;
             background: linear-gradient(135deg, var(--primary), var(--primary-bright));
             color: #000;
-            padding: 12px 30px;
+            padding: 10px 24px;
             border-radius: 50px;
             font-weight: 800;
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px var(--primary-glow);
-            animation: float 3s ease-in-out infinite;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px var(--primary-glow);
             text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .catchy-badge:hover {
-            transform: translateY(-12px) scale(1.05);
-            color: #000;
         }
 
         /* --- Gallery Slider --- */
         .gallery-wrap {
-            max-width: 1200px;
-            margin: 0 auto 120px;
-            position: relative;
-            padding: 0 20px;
+            max-width: 1100px;
+            margin: 0 auto 50px;
+            padding: 0 10px;
         }
 
         .slider {
             position: relative;
-            border-radius: 40px;
+            border-radius: 24px;
             overflow: hidden;
-            aspect-ratio: 16 / 8;
-            border: 2px solid var(--border);
-            box-shadow: 0 60px 120px -30px rgba(0,0,0,0.9);
-            animation: pulse-border 5s infinite;
+            aspect-ratio: 16 / 9;
+            border: 1px solid var(--border);
+            box-shadow: 0 30px 60px -15px rgba(0,0,0,0.7);
         }
 
         .slide {
@@ -195,13 +174,11 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: opacity 1.2s ease, transform 1.2s ease;
-            transform: scale(1.1);
+            transition: opacity 0.8s ease;
         }
 
         .slide.active {
             opacity: 1;
-            transform: scale(1);
             z-index: 10;
         }
 
@@ -213,44 +190,39 @@
 
         .slider-dots {
             position: absolute;
-            bottom: 30px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 20;
             display: flex;
-            gap: 12px;
-            background: rgba(0,0,0,0.3);
-            padding: 10px 20px;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
+            gap: 8px;
         }
 
         .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.2);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
             cursor: pointer;
-            transition: 0.4s;
         }
 
         .dot.active {
-            width: 35px;
+            width: 20px;
+            border-radius: 10px;
             background: var(--primary);
-            box-shadow: 0 0 15px var(--primary-glow);
         }
 
         /* --- Specs Section --- */
         .specs-section {
-            padding: 100px 8%;
+            padding: 40px 6% 80px;
             text-align: center;
         }
 
         .beauty-tagline {
             color: var(--primary);
             font-weight: 800;
-            font-size: 1.3rem;
-            margin-bottom: 70px;
+            font-size: 1rem;
+            margin-bottom: 40px;
             display: block;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -259,110 +231,96 @@
         .specs-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            max-width: 1200px;
+            gap: 15px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .spec-box {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            padding: 50px 20px;
-            border-radius: 35px;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(15px);
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .spec-box:nth-child(2) { animation-delay: 0.5s; }
-        .spec-box:nth-child(3) { animation-delay: 1s; }
-        .spec-box:nth-child(4) { animation-delay: 1.5s; }
-
-        .spec-box:hover {
-            border-color: var(--primary);
-            background: rgba(46, 204, 113, 0.05);
-            transform: scale(1.05) translateY(-10px);
+            padding: 30px 15px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
         }
 
         .spec-box h3 {
-            font-size: 2rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
         .spec-box p {
             color: var(--text-slate);
             text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
             font-weight: 800;
         }
 
-        /* --- Rental Form --- */
+        /* --- Form --- */
         .booking-wrap {
-            padding: 100px 8%;
+            padding: 40px 6% 100px;
             display: flex;
             justify-content: center;
         }
 
         .booking-card {
             width: 100%;
-            max-width: 1000px;
+            max-width: 800px;
             background: linear-gradient(165deg, #111827 0%, #030712 100%);
-            padding: clamp(30px, 8vw, 80px);
-            border-radius: 60px;
+            padding: 40px 30px;
+            border-radius: 32px;
             border: 1px solid var(--border);
-            position: relative;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.6);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
         }
 
         .booking-card h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: 1.8rem;
             font-weight: 800;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             text-align: center;
         }
 
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 20px;
         }
 
         .field {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
         }
 
         .field label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             color: var(--text-slate);
             font-weight: 800;
-            padding-left: 8px;
         }
 
         .field input {
             background: #030712;
             border: 1px solid #1f2937;
-            padding: 20px 28px;
-            border-radius: 20px;
+            padding: 15px 20px;
+            border-radius: 14px;
             color: #fff;
-            font-size: 1rem;
-            transition: all 0.3s;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
         }
 
         .field input:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 20px rgba(46, 204, 113, 0.15);
         }
 
+        /* CSS Validation Visuals */
         .field input:invalid:not(:placeholder-shown) {
-            border-color: #ef4444;
+            border-color: #ff4757;
         }
 
         .full { grid-column: span 2; }
@@ -370,155 +328,70 @@
         .submit-btn {
             background: var(--primary);
             color: #000;
-            padding: 24px;
-            border-radius: 22px;
+            padding: 18px;
+            border-radius: 16px;
             font-weight: 900;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             border: none;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 25px;
-            transition: all 0.4s;
-            box-shadow: 0 10px 25px var(--primary-glow);
+            letter-spacing: 1px;
+            margin-top: 15px;
+            box-shadow: 0 10px 20px var(--primary-glow);
         }
 
-        .submit-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .submit-btn:hover:not(:disabled) {
-            transform: translateY(-5px);
-            background: var(--primary-bright);
-            box-shadow: 0 20px 40px var(--primary-glow);
-        }
-
-        /* --- Custom Modal Popup --- */
+        /* --- Modal --- */
         .modal-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(3, 7, 18, 0.8);
-            backdrop-filter: blur(10px);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
             z-index: 2000;
             display: none;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
+        .modal-overlay.active { display: flex; }
 
         .modal-card {
-            background: linear-gradient(165deg, #111827 0%, #030712 100%);
+            background: #111827;
+            padding: 30px;
+            border-radius: 24px;
+            text-align: center;
+            max-width: 400px;
             border: 1px solid var(--primary-glow);
-            padding: 40px;
-            border-radius: 40px;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 0 50px rgba(46, 204, 113, 0.2);
-            transform: scale(0.8);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .modal-overlay.active .modal-card {
-            transform: scale(1);
-        }
-
-        .modal-card h3 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-weight: 800;
-        }
-
-        .modal-card p {
-            color: var(--text-slate);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .modal-btn {
-            background: var(--primary);
-            color: #000;
-            padding: 15px 35px;
-            border-radius: 15px;
-            font-weight: 800;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .modal-btn:hover {
-            box-shadow: 0 0 20px var(--primary-glow);
-            transform: translateY(-2px);
-        }
-
-        /* --- Success Message --- */
-        #success-view {
-            display: none;
-            text-align: center;
-            padding: 60px 0;
-        }
-
-        .success-icon {
-            font-size: 6rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-            text-shadow: 0 0 30px var(--primary-glow);
-        }
-
-        /* --- Footer --- */
-        footer {
-            padding: 100px 8% 50px;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        .footer-logo {
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: var(--text-white);
-            margin-bottom: 12px;
-            display: block;
-            letter-spacing: 1px;
-        }
-
-        .footer-links {
-            color: var(--text-slate);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .specs-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero h1 { font-size: 4rem; }
-        }
-
-        @media (max-width: 640px) {
-            .specs-grid { grid-template-columns: 1fr; }
+        /* --- Mobile Specific Fixes --- */
+        @media (max-width: 768px) {
+            nav { padding: 12px 5%; }
+            .logo-container img { height: 28px; }
+            .cta-nav { padding: 8px 14px; font-size: 0.7rem; }
+            
+            .hero { padding: 90px 5% 30px; }
+            .hero h1 { line-height: 1.1; margin-bottom: 12px; }
+            
+            .gallery-wrap { margin-bottom: 30px; }
+            .slider { aspect-ratio: 4 / 3; }
+            
+            .specs-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .spec-box { padding: 20px 10px; }
+            .spec-box h3 { font-size: 1.2rem; }
+            
+            .booking-wrap { padding-top: 20px; }
             .form-grid { grid-template-columns: 1fr; }
             .full { grid-column: span 1; }
-            .hero h1 { font-size: 2.8rem; }
-            .slider { aspect-ratio: 4 / 3; }
-            nav { padding: 15px 5%; }
-            .booking-card { padding: 40px 25px; border-radius: 40px; }
-            .spec-box { padding: 30px 15px; }
-            .modal-card { padding: 30px 20px; border-radius: 30px; }
-            .modal-card h3 { font-size: 1.8rem; }
+            .booking-card { padding: 30px 20px; }
+        }
+
+        footer {
+            padding: 60px 5% 40px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            font-size: 0.75rem;
+            color: var(--text-slate);
         }
     </style>
 </head>
@@ -531,12 +404,12 @@
         <a href="#book" class="cta-nav">Rent E-Luna</a>
     </nav>
 
-    <!-- Custom Modal Popup -->
+    <!-- Limit Modal -->
     <div class="modal-overlay" id="limitModal">
         <div class="modal-card">
-            <h3>OOps!</h3>
-            <p>Please come back tomorrow. Daily limits exhausted but your passion for E-Luna is noted!</p>
-            <button class="modal-btn" onclick="closeModal()">Got it!</button>
+            <h3 style="color: var(--primary); margin-bottom: 10px; font-size: 1.5rem;">OOps!</h3>
+            <p style="color: #94a3b8; margin-bottom: 20px;">Daily limit exhausted. Please come back tomorrow to start your E-Luna journey!</p>
+            <button class="cta-nav" style="width: 100%; border: none; cursor: pointer;" onclick="closeModal()">Close</button>
         </div>
     </div>
 
@@ -548,16 +421,16 @@
             <a href="#book" class="catchy-badge">Grab Yours for ₹300 / Day</a>
         </div>
 
-        <div class="gallery-wrap reveal" style="transition-delay: 0.2s;">
+        <div class="gallery-wrap reveal">
             <div class="slider" id="mainSlider">
                 <div class="slide active">
-                    <img src="https://kineticgreen.girnarsoft.com/uploads/media_library/Eluna%20Gallery_web_1733471161.png" alt="E-Luna Gallery 1">
+                    <img src="https://kineticgreen.girnarsoft.com/uploads/media_library/Eluna%20Gallery_web_1733471161.png" alt="E-Luna 1">
                 </div>
                 <div class="slide">
-                    <img src="https://kineticgreen.girnarsoft.com/uploads/media_library/web-gallery_web_1707220051.png" alt="E-Luna Gallery 2">
+                    <img src="https://kineticgreen.girnarsoft.com/uploads/media_library/web-gallery_web_1707220051.png" alt="E-Luna 2">
                 </div>
                 <div class="slide">
-                    <img src="https://kineticgreen.girnarsoft.com/uploads/media_library/Untitled-2_web_1707219988.png" alt="E-Luna Gallery 3">
+                    <img src="https://kineticgreen.girnarsoft.com/uploads/media_library/Untitled-2_web_1707219988.png" alt="E-Luna 3">
                 </div>
 
                 <div class="slider-dots">
@@ -571,7 +444,7 @@
 
     <section class="specs-section">
         <div class="reveal">
-            <h2 style="font-size: 3rem; font-weight: 800; margin-bottom: 10px;">Heavy Duty Hai</h2>
+            <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 8px;">Heavy Duty Hai</h2>
             <span class="beauty-tagline">Yahi toh beauty hai!</span>
         </div>
 
@@ -586,11 +459,11 @@
             </div>
             <div class="spec-box">
                 <h3>2 kWh</h3>
-                <p>Battery Capacity</p>
+                <p>Battery</p>
             </div>
             <div class="spec-box">
                 <h3>4 Hours</h3>
-                <p>Charging Time</p>
+                <p>Charge Time</p>
             </div>
         </div>
     </section>
@@ -600,237 +473,136 @@
             <div id="form-ui">
                 <h2>Rent E-Luna Now</h2>
                 <form id="eLunaRentalForm" class="form-grid">
-                    <!-- Honeypot Field -->
-                    <div style="display:none;">
-                        <input type="text" name="honeypot" tabindex="-1" autocomplete="off">
-                    </div>
-                    <!-- IP Field (Filled by JS) -->
+                    <!-- Anti-spam -->
+                    <div style="display:none;"><input type="text" name="honeypot" tabindex="-1" autocomplete="off"></div>
                     <input type="hidden" name="user_ip" id="user_ip">
 
                     <div class="field">
                         <label>First Name</label>
-                        <input type="text" id="fname" name="first_name" placeholder="John" required pattern="[A-Za-z ]{2,30}">
+                        <input type="text" name="first_name" placeholder="John" required pattern="[A-Za-z ]{2,30}" title="Only letters allowed (2-30 chars)">
                     </div>
                     <div class="field">
                         <label>Last Name</label>
-                        <input type="text" id="lname" name="last_name" placeholder="Doe" required pattern="[A-Za-z ]{2,30}">
+                        <input type="text" name="last_name" placeholder="Doe" required pattern="[A-Za-z ]{2,30}" title="Only letters allowed (2-30 chars)">
                     </div>
                     <div class="field">
                         <label>Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        <input type="email" name="email" placeholder="john@example.com" required title="Enter a valid email address">
                     </div>
                     <div class="field">
                         <label>Contact Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="9876543210" required pattern="[0-9]{10}" maxlength="10">
+                        <input type="tel" name="phone" id="phone" placeholder="9876543210" required pattern="[0-9]{10}" maxlength="10" title="Enter exactly 10 digits">
                     </div>
                     <div class="field">
                         <label>State</label>
-                        <input type="text" id="state" name="state" placeholder="Maharashtra" required>
+                        <input type="text" name="state" placeholder="Maharashtra" required>
                     </div>
                     <div class="field">
                         <label>City</label>
-                        <input type="text" id="city" name="city" placeholder="Pune" required>
+                        <input type="text" name="city" placeholder="Pune" required>
                     </div>
                     <div class="field full">
                         <label>Pincode</label>
-                        <input type="text" id="pincode" name="pincode" placeholder="411001" required pattern="[0-9]{6}" maxlength="6">
+                        <input type="text" name="pincode" id="pincode" placeholder="411001" required pattern="[0-9]{6}" maxlength="6" title="Enter exactly 6 digits">
                     </div>
-                    <button type="submit" id="submitBtn" class="submit-btn full">Confirm Rental Request</button>
+                    <button type="submit" id="submitBtn" class="submit-btn full">Confirm Request</button>
                 </form>
             </div>
 
-            <div id="success-view">
-                <div class="success-icon">✓</div>
-                <h2 style="margin-bottom: 20px; font-size: 3rem;">Ready to Ride!</h2>
-                <p style="color: var(--text-slate); font-size: 1.3rem; max-width: 600px; margin: 0 auto 40px;">Request submitted successfully! Our E-Luna specialist from Kinetic Green will contact you shortly.</p>
-                <button onclick="window.location.reload()" style="background: transparent; color: #fff; border: 1px solid var(--border); padding: 15px 35px; border-radius: 15px; cursor: pointer; font-weight: 700;">New Inquiry</button>
+            <div id="success-view" style="display:none; text-align:center;">
+                <div style="font-size: 4rem; color: var(--primary); margin-bottom: 20px;">✓</div>
+                <h2 style="margin-bottom: 15px;">Ready to Ride!</h2>
+                <p style="color: var(--text-slate); margin-bottom: 30px;">Request submitted successfully! Our E-Luna specialist will contact you shortly.</p>
+                <button class="cta-nav" style="border:none; cursor:pointer;" onclick="window.location.reload()">New Inquiry</button>
             </div>
         </div>
     </section>
 
     <footer>
         <strong class="footer-logo">POWERED BY KINETIC GREEN</strong>
-        <div class="footer-links">
-            © 2026 Kinetic Green Energy & Power Solutions Ltd. | Terms & Conditions apply*
-        </div>
+        <div>© 2026 Kinetic Green Energy & Power Solutions Ltd. | Terms & Conditions apply*</div>
     </footer>
 
     <script>
-        // --- GOOGLE SHEETS CONFIGURATION ---
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxyMbfaoENivd-_NDFjq2sFpjDIdYCuHCtxwztq3-J4UcRV7deQYl5RzS5UgKRAPypFLg/exec"; 
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxyMbfaoENivd-_NDFjq2sFpjDIdYCuHCtxwztq3-J4UcRV7deQYl5RzS5UgKRAPypFLg/exec";
 
-        const pageLoadTime = Date.now();
+        function closeModal() { document.getElementById('limitModal').classList.remove('active'); }
 
-        function showLimitModal() {
-            document.getElementById('limitModal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('limitModal').classList.remove('active');
-        }
-
-        // --- IP PROTECTION & INITIALIZATION ---
         (async function init() {
-            // Fetch User IP for backend validation
             try {
                 const response = await fetch('https://api.ipify.org?format=json');
                 const data = await response.json();
                 document.getElementById('user_ip').value = data.ip;
                 
-                // Frontend Check (Fast deterrent)
                 const submissionKey = `eluna_sub_${new Date().toDateString()}`;
-                const dailyCount = parseInt(localStorage.getItem(submissionKey) || "0");
-                if (dailyCount >= 3) {
+                if (parseInt(localStorage.getItem(submissionKey) || "0") >= 3) {
                     const btn = document.getElementById('submitBtn');
                     btn.disabled = true;
-                    btn.innerText = "Daily limit reached";
-                    btn.style.opacity = "0.5";
-                }
-            } catch (e) {
-                console.warn("IP tracking limited by user settings.");
-            }
-
-            // PWA Logic
-            try {
-                const manifest = {
-                    "short_name": "E-Luna",
-                    "name": "Rent E-Luna Kinetic Green",
-                    "icons": [{
-                        "src": "https://kineticgreen.girnarsoft.com/assets/frontend/image/default-white-logo.svg",
-                        "type": "image/svg+xml",
-                        "sizes": "512x512"
-                    }],
-                    "start_url": ".",
-                    "background_color": "#030712",
-                    "display": "standalone",
-                    "theme_color": "#2ecc71"
-                };
-                const manifestBlob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
-                document.querySelector('#pwa-manifest').setAttribute('href', URL.createObjectURL(manifestBlob));
-
-                if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
-                    const swCode = `
-                        const CACHE_NAME = 'eluna-v4';
-                        self.addEventListener('install', e => {
-                            e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(['./'])));
-                        });
-                        self.addEventListener('fetch', e => {
-                            e.respondWith(caches.match(e.request).then(res => res || fetch(e.request)));
-                        });
-                    `;
-                    const swBlob = new Blob([swCode], {type: 'application/javascript'});
-                    navigator.serviceWorker.register(URL.createObjectURL(swBlob)).catch(() => {});
+                    btn.innerText = "Daily Limit Reached";
                 }
             } catch (e) {}
+
+            // PWA Manifest
+            const manifest = {
+                "short_name": "E-Luna",
+                "name": "Rent E-Luna",
+                "start_url": ".",
+                "display": "standalone",
+                "theme_color": "#030712",
+                "background_color": "#030712",
+                "icons": [{"src": "https://kineticgreen.girnarsoft.com/assets/frontend/image/default-white-logo.svg", "sizes": "512x512", "type": "image/svg+xml"}]
+            };
+            const blob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
+            document.querySelector('#pwa-manifest').setAttribute('href', URL.createObjectURL(blob));
         })();
 
-        // --- UI LOGIC ---
-        const nav = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) nav.classList.add('scrolled');
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 30) nav.classList.add('scrolled');
             else nav.classList.remove('scrolled');
-        });
-
-        const reveal = () => {
+            
             document.querySelectorAll('.reveal').forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
+                if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('active');
             });
-        };
-        window.addEventListener('scroll', reveal);
-        window.onload = reveal;
+        });
 
         let currentIdx = 0;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
-        
-        function updateSlider() {
+        function jumpToSlide(idx) {
+            currentIdx = idx;
             slides.forEach((s, i) => s.classList.toggle('active', i === currentIdx));
             dots.forEach((d, i) => d.classList.toggle('active', i === currentIdx));
         }
-
-        function jumpToSlide(idx) {
-            currentIdx = idx;
-            updateSlider();
-        }
-
-        setInterval(() => {
-            currentIdx = (currentIdx + 1) % slides.length;
-            updateSlider();
-        }, 5000);
+        setInterval(() => { currentIdx = (currentIdx + 1) % slides.length; jumpToSlide(currentIdx); }, 5000);
 
         ['phone', 'pincode'].forEach(id => {
-            const el = document.getElementById(id);
-            if(el) {
-                el.addEventListener('input', function() {
-                    this.value = this.value.replace(/[^0-9]/g, '');
-                });
-            }
+            document.getElementById(id).addEventListener('input', function() { this.value = this.value.replace(/[^0-9]/g, ''); });
         });
 
-        // --- FORM SUBMISSION ---
         document.getElementById('eLunaRentalForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Speed check
-            if (Date.now() - pageLoadTime < 2500) {
-                showSuccess(); 
-                return;
-            }
-
             const btn = document.getElementById('submitBtn');
-            const originalText = btn.innerText;
-            
-            const form = e.target;
-            const data = new FormData(form);
-
-            // Honeypot check
-            if (data.get('honeypot')) {
-                setTimeout(showSuccess, 1000);
-                return;
-            }
-
-            // Daily count check (Frontend safeguard)
-            const submissionKey = `eluna_sub_${new Date().toDateString()}`;
-            let dailyCount = parseInt(localStorage.getItem(submissionKey) || "0");
-            if (dailyCount >= 3) {
-                showLimitModal();
-                return;
-            }
-
-            btn.innerText = "SUBMITTING...";
             btn.disabled = true;
+            btn.innerText = "Submitting...";
 
-            fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                body: data
-            })
-            .then(async response => {
-                const text = await response.text();
+            fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: new FormData(this) })
+            .then(async res => {
+                const text = await res.text();
                 if (text === "LimitExceeded") {
-                    showLimitModal();
-                    btn.innerText = originalText;
+                    document.getElementById('limitModal').classList.add('active');
                     btn.disabled = false;
+                    btn.innerText = "Confirm Request";
                 } else {
-                    localStorage.setItem(submissionKey, (dailyCount + 1).toString());
-                    showSuccess();
+                    localStorage.setItem(`eluna_sub_${new Date().toDateString()}`, "3");
+                    document.getElementById('form-ui').style.display = 'none';
+                    document.getElementById('success-view').style.display = 'block';
                 }
-            })
-            .catch(error => {
-                console.error('Error!', error.message);
-                alert("Submission failed. Please check your connection.");
-                btn.innerText = originalText;
+            }).catch(() => {
+                alert("Check internet connection.");
                 btn.disabled = false;
             });
         });
-
-        function showSuccess() {
-            document.getElementById('form-ui').style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('form-ui').style.display = 'none';
-                document.getElementById('success-view').style.display = 'block';
-                window.scrollTo({ top: document.getElementById('book').offsetTop - 120, behavior: 'smooth' });
-            }, 400);
-        }
     </script>
 </body>
 </html>
